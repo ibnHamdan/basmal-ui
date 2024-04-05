@@ -4,6 +4,7 @@ import { Honeycomb } from './components/Honeycomb';
 import { Guess } from './components/Guess';
 import { Score } from './components/Score';
 import { CorrectGuesses } from './components/CorrectGuesses';
+import { useToast } from './components/Toast';
 
 interface GameData {
   displayDate: string;
@@ -16,6 +17,8 @@ function App() {
   const [data, setData] = useState<GameData>();
   const [guess, setGuess] = useState('');
   const [correctGuesses, setCorrectGuesses] = useState<string[]>([]);
+
+  const toast = useToast();
 
   const addLetter = (letter: string) => {
     setGuess((g) => g + letter);
@@ -30,12 +33,27 @@ function App() {
   };
 
   const checkGuess = () => {
-    if (correctGuesses.includes(guess)) {
+    if (guess.length < 4) {
+      console.log(guess);
+      toast.open(`كلمة من أربعة أحرف وأكثر !`);
+    } else if (correctGuesses.includes(guess)) {
       console.log('مذكورة ', guess);
+      toast.open(`خمنت هذه الكلمة مسبقا`);
     } else if (data?.answers && data?.answers.includes(guess)) {
       addCorrectGuees(guess);
       console.log('صحيح', guess);
+      // const theScore = correctGuesses.map((g) => {
+      //   if (g.length === 4) {
+      //     return '+1';
+      //   } else {
+      //     return `+${g.length}`;
+      //   }
+      // });
+
+      toast.open(`أحسنت ، كلمة صحيحة `);
+      //theScore = [''];
     } else {
+      toast.open(`الكلمة ليست ضمن ضائمة الأجوبة`);
       console.log('الكلمة ليست في القائمة');
     }
 
