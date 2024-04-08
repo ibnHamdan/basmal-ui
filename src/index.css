@@ -62,8 +62,6 @@ body {
 }
 
 .guess-letters {
-  text-transform: uppercase;
-  letter-spacing: 3px;
   font-size: 2rem;
 }
 
@@ -112,10 +110,10 @@ body {
 }
 
 .cell-letter {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.875em;
   text-anchor: middle;
-  text-transform: uppercase;
+
   pointer-events: none;
 }
 
