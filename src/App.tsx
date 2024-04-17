@@ -5,6 +5,7 @@ import { Guess } from './components/Guess';
 import { Score } from './components/Score';
 import { CorrectGuesses } from './components/CorrectGuesses';
 import { useToast } from './components/Toast';
+import { HelpModal } from './components/helpModeal';
 
 interface GameData {
   displayDate: string;
@@ -71,12 +72,26 @@ function App() {
     }
     fetchData();
   }, []);
+  const [isHelpModalOpen, setHelpModalOpen] =
+    useState<boolean>(false);
+
+  const handleOpenHelpModal = () => {
+    setHelpModalOpen(true);
+  };
+  const handleCloseHelpModal = () => {
+    setHelpModalOpen(false);
+  };
 
   return (
     <>
       {data ? (
         <>
           <Header date={data.displayDate} />
+          <button onClick={handleOpenHelpModal}>مساعدة</button>
+          <HelpModal
+            isOpen={isHelpModalOpen}
+            onClose={handleCloseHelpModal}
+          />
           <Score correctGuesses={correctGuesses}></Score>
           <CorrectGuesses
             correctGuesses={correctGuesses}

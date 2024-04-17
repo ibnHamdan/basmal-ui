@@ -86,27 +86,27 @@ body {
 }
 
 .cell:nth-child(2) {
-  transform: translate(-75%, -50%);
+  transform: translate(-50%, -110%);
 }
 
 .cell:nth-child(3) {
-  transform: translate(0, -100%);
+  transform: translate(50%, -110%);
 }
 
 .cell:nth-child(4) {
-  transform: translate(75%, -50%);
+  transform: translate(100%, -10%);
 }
 
 .cell:nth-child(5) {
-  transform: translate(75%, 50%);
+  transform: translate(50%, 90%);
 }
 
 .cell:nth-child(6) {
-  transform: translate(0, 100%);
+  transform: translate(-50%, 90%);
 }
 
 .cell:nth-child(7) {
-  transform: translate(-75%, 50%);
+  transform: translate(-100%, -10%);
 }
 
 .cell-letter {
@@ -117,10 +117,18 @@ body {
   pointer-events: none;
 }
 
+.center-letter {
+  width: 60%;
+  height: 65%;
+  left: 20%;
+  top: 40px;
+}
+
 .center-letter .cell-fill {
   cursor: pointer;
   fill: #f7da21;
   transition: all 100ms;
+
 }
 
 .outer-letter .cell-fill {
@@ -192,8 +200,9 @@ a.close::after {
 
 .toasts-wrapper {
   position: absolute;
-  bottom: 60%;
-  right: 22%;
+  top: 25%;
+  right: 33%;
+
 }
 
 .toast {
@@ -220,4 +229,22 @@ a.close::after {
   margin-top: 8px;
   margin-right: 8px;
   cursor: pointer;
+}
+
+.modal {
+  position: relative;
+  max-width: 20rem;
+  padding: 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem 0.25rem hsl(0 0% 0% / 10%);
+}
+.modal-close-btn {
+  font-size: .75em;
+  position: absolute;
+  top: .25em;
+  right: .25em;
+}
+.modal::backdrop {
+  background: hsl(0 0% 0% / 50%);
 }
