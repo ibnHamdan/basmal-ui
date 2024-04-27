@@ -113,27 +113,27 @@ body {
   font-weight: 500;
   font-size: 1.875em;
   text-anchor: middle;
-
+  fill: #ffffff;
   pointer-events: none;
 }
 
 .center-letter {
   width: 60%;
-  height: 65%;
+  height: 60%;
   left: 20%;
-  top: 40px;
+  top: 45px;
 }
 
 .center-letter .cell-fill {
   cursor: pointer;
-  fill: #f7da21;
+  fill: #3b6452;
   transition: all 100ms;
 
 }
 
 .outer-letter .cell-fill {
   cursor: pointer;
-  fill: #e6e6e6;
+  fill: #bc8906;
   transition: all 100ms;
 }
 
@@ -201,7 +201,7 @@ a.close::after {
 .toasts-wrapper {
   position: absolute;
   top: 25%;
-  right: 33%;
+  right: 40%;
 
 }
 
@@ -210,11 +210,13 @@ a.close::after {
   background-color: #fafafa;
   border-radius: 4px;
   max-width: 480px;
+  width: 333px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
   margin-top: 16px;
   display: flex;
   position: relative;
   cursor: pointer;
+  text-align: center;
 }
 
 .toast__text {

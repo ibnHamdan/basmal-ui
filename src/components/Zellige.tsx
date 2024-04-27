@@ -9,7 +9,7 @@ interface Props {
   checkGuess: () => void;
 }
 
-export const Honeycomb: FC<Props> = ({
+export const Zellige: FC<Props> = ({
   centerLetter,
   outerLetters,
   addLetter,

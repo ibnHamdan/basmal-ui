@@ -25,7 +25,7 @@ export const Letter: FC<Props> = ({
           strokeWidth="5"
           points="0,37.5 40,37.5 60,0 80,37.5 120,37.5 99,75 120,112.5 80,112.5 60,150 40,112.5 0,112.5 21,75 "
         ></polygon>
-        <text className="cell-letter" x="50%" y="50%" dy="0.35em">
+        <text className="cell-letter" x="50%" y="45%" dy="0.35em">
           {letter}
         </text>
       </svg>
