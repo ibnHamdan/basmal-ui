@@ -55,7 +55,7 @@ function App() {
       toast.open(`أحسنت ، كلمة صحيحة `);
       //theScore = [''];
     } else {
-      toast.open(`الكلمة ليست ضمن ضائمة الأجوبة`);
+      toast.open(`الكلمة ليست ضمن قائمة الأجوبة`);
       console.log('الكلمة ليست في القائمة');
     }
 
